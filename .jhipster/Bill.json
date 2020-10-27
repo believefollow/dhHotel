@@ -1,0 +1,32 @@
+{
+  "name": "Bill",
+  "fields": [
+    {
+      "fieldName": "balance",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "source",
+      "fieldType": "Source",
+      "fieldValues": "AliPay,WeChat"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "checkIn",
+      "otherEntityRelationshipName": "bill"
+    }
+  ],
+  "changelogDate": "20201027152042",
+  "entityTableName": "bill",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

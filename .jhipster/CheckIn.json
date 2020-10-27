@@ -1,0 +1,44 @@
+{
+  "name": "CheckIn",
+  "fields": [
+    {
+      "fieldName": "startTime",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "endTime",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "customer",
+      "otherEntityRelationshipName": "checkIn",
+      "relationshipName": "customer"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "bill",
+      "otherEntityRelationshipName": "checkIn",
+      "relationshipName": "bill"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "room",
+      "otherEntityRelationshipName": "checkIn",
+      "relationshipName": "room"
+    }
+  ],
+  "changelogDate": "20201027152142",
+  "entityTableName": "check_in",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

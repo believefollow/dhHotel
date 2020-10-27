@@ -83,6 +83,18 @@ public class CacheConfiguration {
             createCache(cm, com.kyuan.hotel.domain.User.class.getName(), jcacheConfiguration);
             createCache(cm, com.kyuan.hotel.domain.Authority.class.getName(), jcacheConfiguration);
             createCache(cm, com.kyuan.hotel.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            createCache(cm, com.kyuan.hotel.domain.Customer.class.getName(), jcacheConfiguration);
+            createCache(cm, com.kyuan.hotel.domain.Vip.class.getName(), jcacheConfiguration);
+            createCache(cm, com.kyuan.hotel.domain.Bill.class.getName(), jcacheConfiguration);
+            createCache(cm, com.kyuan.hotel.domain.CheckIn.class.getName(), jcacheConfiguration);
+            createCache(cm, com.kyuan.hotel.domain.CheckIn.class.getName() + ".customers", jcacheConfiguration);
+            createCache(cm, com.kyuan.hotel.domain.CheckIn.class.getName() + ".bills", jcacheConfiguration);
+            createCache(cm, com.kyuan.hotel.domain.CheckIn.class.getName() + ".rooms", jcacheConfiguration);
+            createCache(cm, com.kyuan.hotel.domain.Room.class.getName(), jcacheConfiguration);
+            createCache(cm, com.kyuan.hotel.domain.Employee.class.getName(), jcacheConfiguration);
+            createCache(cm, com.kyuan.hotel.domain.Employee.class.getName() + ".jobs", jcacheConfiguration);
+            createCache(cm, com.kyuan.hotel.domain.Job.class.getName(), jcacheConfiguration);
+            createCache(cm, com.kyuan.hotel.domain.JobHistory.class.getName(), jcacheConfiguration);
             // jhipster-needle-redis-add-entry
         };
     }
