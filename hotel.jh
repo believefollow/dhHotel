@@ -1,0 +1,113 @@
+entity Customer {
+	name String
+    idCard String
+    sex Sex
+    address String
+    nation String
+}
+
+enum Sex {
+	Male, Female
+}
+
+entity Vip {
+    phone String
+    actived Boolean
+}
+
+entity Bill {
+	id String
+    balance BigDecimal
+    source Source
+}
+enum Source {
+	AliPay
+    WeChat
+}
+
+entity CheckIn {
+	id String
+    startTime Date
+    endTime DAte
+}
+
+entity Room {
+	id String
+    roomType RoomType
+    priceType PriceType
+}
+
+enum RoomType {
+	Single, Double, Trible
+}
+
+enum RoomType {
+	Normal
+}
+
+// an ignored comment
+/** not an ignored comment */
+/**
+ * Task entity.
+ * @author The JHipster team.
+ */
+
+/**
+ * The Employee entity.
+ */
+entity Employee {
+	/**
+	* The firstname attribute.
+	*/
+	firstName String,
+	lastName String,
+	email String,
+	phoneNumber String,
+	hireDate Instant,
+	salary Long,
+	commissionPct Long
+}
+
+entity Job {
+	jobTitle String,
+	minSalary Long,
+	maxSalary Long
+}
+
+entity JobHistory {
+	startDate Instant,
+	endDate Instant
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Customer to CheckIn{customer},
+    Bill to CheckIn{bill},
+    Room to CheckIn{room},
+	Employee to Job{employee},
+}
+
+relationship ManyToOne {
+	Employee{manager} to Employee
+}
+
+// defining multiple oneToOne relationships
+relationship OneToOne {
+	Vip{customer} to Customer,
+	JobHistory{job} to Job,
+	JobHistory{department} to Department,
+	JobHistory{employee} to Employee
+}
+
+// Set pagination options
+paginate JobHistory, Employee, Vip, Customer, Bill, Room, CheckIn with infinite-scroll
+paginate Job with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except Employee, Job
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
