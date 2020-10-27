@@ -1,0 +1,33 @@
+{
+  "name": "Room",
+  "fields": [
+    {
+      "fieldName": "roomType",
+      "fieldType": "RoomType",
+      "fieldValues": "Single,Double,Trible"
+    },
+    {
+      "fieldName": "priceType",
+      "fieldType": "PriceType",
+      "fieldValues": "Normal"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "checkIn",
+      "otherEntityRelationshipName": "room"
+    }
+  ],
+  "changelogDate": "20201027152242",
+  "entityTableName": "room",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
